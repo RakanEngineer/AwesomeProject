@@ -21,5 +21,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  dummyText: { margin: 16, borderWidth: 2, borderColor: "red", padding: 16 },
+  dummyText: { margin: 16, borderWidth: 2, borderColor: "blue", padding: 16 },
 });
