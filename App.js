@@ -11,9 +11,9 @@ export default function App() {
     //   <Button title="Tap me" />
     //   {/* <StatusBar style="auto" /> */}
     // </View>
-    <View style={styles.container}>
-      <View>
-        <TextInput placeholder="Your cource goal" />
+    <View style={styles.appContainer}>
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.textInput} placeholder="Your cource goal" />
         <Button title="Add Goal" />
       </View>
       <View>
@@ -24,12 +24,25 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  appContainer: {
+    padding: 50,
+  },
+  inputContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  textInput: {
+    borderWidth: 1,
+    borderColor: "#cccccc",
+    width: "80%",
+    marginRight: 8,
+    padding: 8,
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    padding: 50,
   },
   dummyText: {
     margin: 16,
