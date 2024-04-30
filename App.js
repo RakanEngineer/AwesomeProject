@@ -28,6 +28,13 @@ export default function App() {
     ]);
   }
 
+  function deleteGoalHandler() {
+    console.log("Delete");
+    // setCourseGoals((currentCourseGoals) => {
+    //   return currentCourseGoals.filter((goal) => goal.id !== id);
+    // });
+  }
+
   return (
     // <View style={styles.container}>
     //   <View>
@@ -63,7 +70,10 @@ export default function App() {
               // <View style={styles.goalItem}>
               //   <Text style={styles.goalText}>{itemData.item.text}</Text>
               // </View>
-              <GoalItem text={itemData.item.text} />
+              <GoalItem
+                text={itemData.item.text}
+                onDeleteItem={deleteGoalHandler}
+              />
             );
           }}
           keyExtractor={(item, index) => {
