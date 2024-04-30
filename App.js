@@ -22,7 +22,7 @@ export default function App() {
   function addGoalHandler() {
     setCourseGoals((currentCourseGoals) => [
       ...currentCourseGoals,
-      enteredGoalText,
+      { text: enteredGoalText, id: Math.random().toString() },
     ]);
   }
 
@@ -46,13 +46,27 @@ export default function App() {
       </View>
       <View style={styles.goalsContainer}>
         {/* <Text>List of goals....</Text> */}
-        <ScrollView alwaysBounceVertical={false}>
+        {/* <ScrollView>
           {courseGoals.map((goal) => (
             <View key={goal} style={styles.goalItem}>
               <Text style={styles.goalText}>{goal}</Text>
             </View>
           ))}
-        </ScrollView>
+        </ScrollView> */}
+        <FlatList
+          data={courseGoals}
+          renderItem={(itemData) => {
+            return (
+              <View style={styles.goalItem}>
+                <Text style={styles.goalText}>{itemData.item.text}</Text>
+              </View>
+            );
+          }}
+          keyExtractor={(item, index) => {
+            return item.id;
+          }}
+          alwaysBounceVertical={false}
+        />
       </View>
     </View>
   );
